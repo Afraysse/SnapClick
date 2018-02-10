@@ -15,9 +15,9 @@ import {
 
 import reducer from './reducer';
 import { Provider } from 'react-redux';
-import createSagaMiddleware from 'redux-saga'
-import rootSaga from './sagas'
-// components
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './sagas';
+// our components
 import Layout from './components/layout';
 import { HomeContainer } from './components/home';
 import { DetailContainer } from './components/detail';
@@ -47,8 +47,8 @@ const routes = <Route component={Layout}>
 
 // add provider as first component and connect the store to it
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={hashHistory}>{routes}</Router>
-  </Provider>
-  document.getElementById('app')
+	<Provider store={store}>
+		<Router history={hashHistory}>{routes}</Router>
+	</Provider>,
+	document.getElementById('app')
 );
