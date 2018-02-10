@@ -2,10 +2,11 @@ import 'babel-polyfill'; // for redux-saga
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  Router,
+  BrowserRouter,
   Route,
-  hashHistory
-} from 'react-router';
+  Link
+} from 'react-router-dom';
+import hashHistory from 'react-router';
 
 import {
   createStore,
@@ -48,7 +49,7 @@ const routes = <Route component={Layout}>
 // add provider as first component and connect the store to it
 ReactDOM.render(
 	<Provider store={store}>
-		<Router history={hashHistory}>{routes}</Router>
+		<BrowserRouter history={hashHistory}>{routes}</BrowserRouter>
 	</Provider>,
 	document.getElementById('app')
 );
